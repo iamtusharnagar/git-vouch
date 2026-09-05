@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "git-vouch"
+version = "0.1.0"
+description = "Verifiable attestation for AI-assisted git commits."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Tushar Nagar" }]
+keywords = ["git", "ai", "attestation", "provenance", "cli"]
+classifiers = [
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Version Control :: Git",
+]
+
+# Deliberately empty. See README.md#why-zero-dependencies.
+dependencies = []
+
+[project.scripts]
+git-vouch = "git_vouch.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/tusharnagar2002/git-vouch"
+Issues = "https://github.com/tusharnagar2002/git-vouch/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/git_vouch"]
